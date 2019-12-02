@@ -26,7 +26,9 @@ public class Test {
 
 
 
-        //先序遍历递归
+        //先序遍历递归 1 4 5 2 3 6 7
+        btree.preOderTraverse();
+
 
 
 
