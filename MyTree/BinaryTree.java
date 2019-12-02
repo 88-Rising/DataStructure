@@ -10,5 +10,9 @@ public interface BinaryTree {
     //获取树的高度
     public int getHeight();
 
+    //先序遍历
+    public void preOderTraverse();
+    public void preOderTraverse(Node root);
+
 
 }
