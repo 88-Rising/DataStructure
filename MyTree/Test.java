@@ -27,16 +27,18 @@ public class Test {
 
 
         //先序遍历递归 1 4 5 2 3 6 7
-        btree.preOderTraverse();
+        btree.preOrderTraverse();
 
 
 
 
-        //中序遍历递归
+        //中序遍历递归4 5 1 3 2 6 7
+        btree.inOrderTraverse();
 
 
 
-        //后序遍历递归
+        //后序遍历递归5 4 3 7 9 2 1
+        btree.postOrderTraverse();
 
 
 
