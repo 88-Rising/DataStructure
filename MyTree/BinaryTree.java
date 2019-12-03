@@ -11,8 +11,16 @@ public interface BinaryTree {
     public int getHeight();
 
     //先序遍历
-    public void preOderTraverse();
-    public void preOderTraverse(Node root);
+    public void preOrderTraverse();
+    public void preOrderTraverse(Node root);
+
+    //中序遍历
+    public void inOrderTraverse();
+    public void inOrderTraverse(Node root);
+
+    //后序遍历
+    public void postOrderTraverse();
+    public void postOrderTraverse(Node root);
 
 
 }
