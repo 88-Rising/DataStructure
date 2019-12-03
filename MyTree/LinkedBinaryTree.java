@@ -23,14 +23,14 @@ public class LinkedBinaryTree implements BinaryTree {
     }
 
 
-    public void preOderTraverse(){
+    public void preOrderTraverse(){
         System.out.println("先序遍历");
-        this.preOderTraverse(root);
+        this.preOrderTraverse(this.root);
         System.out.println();
 
     }
     @Override
-    public void preOderTraverse(Node root) {
+    public void preOrderTraverse(Node root) {
         /*
         * 1.输出根节点的值
         * 2.对左子树进行先序遍历
@@ -40,13 +40,47 @@ public class LinkedBinaryTree implements BinaryTree {
             System.out.print(root.value+"  ");
 
 
-            this.preOderTraverse(root.leftChild);
+            this.preOrderTraverse(root.leftChild);
 
-          this.preOderTraverse(root.rightChild);
+          this.preOrderTraverse(root.rightChild);
+
+        }
+    }
+
+    @Override
+    public void inOrderTraverse() {
+        System.out.println("中序遍历");
+        this.inOrderTraverse(this.root);
+        System.out.println();
+
+    }
+
+
+    public void inOrderTraverse(Node root) {
+        if(root!=null){
+            this.inOrderTraverse(root.leftChild);
+            System.out.print(root.value+"   ");
+            this.inOrderTraverse(root.rightChild);
 
         }
 
+    }
 
+    @Override
+    public void postOrderTraverse() {
+        System.out.println("后序遍历");
+        this.postOrderTraverse(this.root);
+        System.out.println();
+
+    }
+
+    @Override
+    public void postOrderTraverse(Node root) {
+        if(root!=null){
+            this.postOrderTraverse(root.leftChild);
+            this.postOrderTraverse(root.rightChild);
+            System.out.print(root.value+"   ");
+        }
 
     }
 }
