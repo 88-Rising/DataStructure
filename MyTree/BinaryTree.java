@@ -27,6 +27,8 @@ public interface BinaryTree {
     //寻找某个值
     public Node findKey(int value);
 
+    //层次遍历
+    public void levelOrderByStack();
 
 
 
