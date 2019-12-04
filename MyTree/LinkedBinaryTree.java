@@ -123,4 +123,32 @@ public class LinkedBinaryTree implements BinaryTree {
         }
 
     }
+
+    public Node findKey(int value){
+
+        return this.findKey(value,root);
+    }
+    public Node findKey(Object value,Node root){
+        if(root ==null){
+            return null;
+        }else if(root!=null&&root.value==value){
+            return root;
+        }else {
+
+            Node node1=this.findKey(value,root.leftChild);
+            Node node2=this.findKey(value,root.rightChild);
+            if(node1!=null&& node1.value==value ){
+
+                return node1;
+            }else if(node2!=null&& node2.value==value) {
+
+                return node2;
+            }  else {
+                return null;
+            }
+
+
+        }
+    }
+
 }
