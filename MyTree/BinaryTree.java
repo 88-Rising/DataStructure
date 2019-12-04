@@ -24,7 +24,8 @@ public interface BinaryTree {
     public void postOrderTraverse();
     public void postOrderTraverse(Node root);
 
-
+    //寻找某个值
+    public Node findKey(int value);
 
 
 
