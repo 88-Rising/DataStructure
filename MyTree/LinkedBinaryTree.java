@@ -2,6 +2,7 @@ package MyTree;
 
 public class LinkedBinaryTree implements BinaryTree {
     public Node root;
+    private int size;
 
     public LinkedBinaryTree(Node root) {
         this.root = root;
@@ -14,7 +15,24 @@ public class LinkedBinaryTree implements BinaryTree {
 
     @Override
     public int size() {
-        return 0;
+        System.out.println("二叉树的节点个数：");
+        return this.size(root);
+    }
+    public int size(Node root){
+        if(root!=null){
+            int nl=this.size(root.leftChild);
+
+
+            int nr=this.size(root.rightChild);
+
+
+            return nl+nr+1;
+
+        }else{
+            return 0;
+
+        }
+
     }
 
     @Override
@@ -29,8 +47,7 @@ public class LinkedBinaryTree implements BinaryTree {
           int nl=this.getHeight(root.leftChild);
 
             //获取右子树的高度
-
-            int nr=this.getHeight(root.rightChild);
+          int nr=this.getHeight(root.rightChild);
 
             //返回左子树，右子树的高度加1
           return nl>nr?nl+1:nr+1;
@@ -43,6 +60,7 @@ public class LinkedBinaryTree implements BinaryTree {
 
 
     }
+
 
 
     public void preOrderTraverse(){
