@@ -50,11 +50,15 @@ public class Test {
 
 
         //在二叉树中查找某个值
-        System.out.println(btree.getHeight());
+
+
 
         //二叉树的高度
+        System.out.println(btree.getHeight());
 
         //二叉树的结点数
+        System.out.println(btree.size());
+
 
 
     }
