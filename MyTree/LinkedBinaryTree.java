@@ -1,5 +1,7 @@
 package MyTree;
 
+import java.util.*;
+
 public class LinkedBinaryTree implements BinaryTree {
     public Node root;
     private int size;
@@ -128,13 +130,42 @@ public class LinkedBinaryTree implements BinaryTree {
 
         return this.findKey(value,root);
     }
-    public Node findKey(Object value,Node root){
+
+    @Override
+    public void levelOrderByStack() {
+        System.out.println("按照层次遍历二叉树");
+        if(root == null){
+            return;
+        }
+        Queue<Node> queue=new LinkedList<Node>();
+        queue.add(root);
+        while(queue.size()!=0){
+            int len=queue.size();
+            for(int i=0;i<len;i++){
+                Node temp=queue.poll();
+                System.out.print(temp.value+"  ");
+                if(temp.leftChild!=null){
+                    queue.add(temp.leftChild);
+
+                }
+                if(temp.rightChild!=null){
+                    queue.add(temp.rightChild);
+                }
+            }
+
+        }
+
+        System.out.println();
+    }
+
+    public Node findKey(Object value, Node root){
+        //结点为空 可能是整个树的根节点 也可能是递归调用中叶子结点的左孩子和有孩子
         if(root ==null){
             return null;
-        }else if(root!=null&&root.value==value){
+        }else if(root!=null&&root.value==value){//找到了 结束条件1
             return root;
         }else {
-
+            //递归调用
             Node node1=this.findKey(value,root.leftChild);
             Node node2=this.findKey(value,root.rightChild);
             if(node1!=null&& node1.value==value ){
@@ -149,6 +180,9 @@ public class LinkedBinaryTree implements BinaryTree {
 
 
         }
+
     }
+
+
 
 }
