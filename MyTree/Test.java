@@ -46,7 +46,8 @@ public class Test {
 
 
 
-        //层序遍历递归（借助队列）
+        //层序遍历递归（借助队列） 1 4 2 5 3 6 7
+        btree.levelOrderByStack();
 
 
         //在二叉树中查找某个值
@@ -56,6 +57,7 @@ public class Test {
 
         //二叉树的高度
         System.out.println(btree.getHeight());
+
 
         //二叉树的结点数
         System.out.println(btree.size());
