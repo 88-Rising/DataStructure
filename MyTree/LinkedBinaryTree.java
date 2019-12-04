@@ -19,7 +19,29 @@ public class LinkedBinaryTree implements BinaryTree {
 
     @Override
     public int getHeight() {
-        return 0;
+        System.out.println("二叉树的高度：");
+        return this.getHeight(root);
+
+    }
+    public int getHeight(Node root){
+        if(root!=null){
+            //获取左子树的高度
+          int nl=this.getHeight(root.leftChild);
+
+            //获取右子树的高度
+
+            int nr=this.getHeight(root.rightChild);
+
+            //返回左子树，右子树的高度加1
+          return nl>nr?nl+1:nr+1;
+
+        }else{
+
+            return 0;
+        }
+
+
+
     }
 
 
