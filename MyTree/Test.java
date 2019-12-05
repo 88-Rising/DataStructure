@@ -42,7 +42,8 @@ public class Test {
 
 
 
-        //中序遍历非递归（借助栈）
+        //中序遍历非递归（借助栈）4 5 1 3 2 6 7
+        btree.inOrderByStack();
 
 
 
