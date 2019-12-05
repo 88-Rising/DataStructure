@@ -137,7 +137,7 @@ public class LinkedBinaryTree implements BinaryTree {
         if(root == null){
             return;
         }
-        Queue<Node> queue=new LinkedList<Node>();
+        Queue<Node> queue=new LinkedList<Node>();//队列
         queue.add(root);
         while(queue.size()!=0){
             int len=queue.size();
@@ -177,12 +177,27 @@ public class LinkedBinaryTree implements BinaryTree {
             }  else {
                 return null;
             }
-
-
         }
-
     }
 
+      //栈 后进的先出
+    public void inOrderByStack(){
+        System.out.println("中序非递归遍历");
+        Deque<Node> stack=new LinkedList<Node>();//栈
+        Node current=root;
+        while(current!=null||!stack.isEmpty()){
+            while(current!=null){
+                stack.push(current);
+                current=current.leftChild;
+            }
+            if(!stack.isEmpty()){
+                current=stack.pop();
+                System.out.print(current.value+"  ");
+                current=current.rightChild;
+            }
+        }
+        System.out.println();
+    }
 
 
 }
