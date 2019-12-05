@@ -30,6 +30,9 @@ public interface BinaryTree {
     //层次遍历
     public void levelOrderByStack();
 
+    //借助栈进行中序遍历
+    public void inOrderByStack();
+
 
 
 }
