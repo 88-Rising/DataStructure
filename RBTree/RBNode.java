@@ -15,7 +15,7 @@ package RBTree;
 *
 * */
 public class RBNode<T> {
-    T element;
+    T element;//元素
     RBNode<T> right;//右孩子
     RBNode<T> left;//左孩子
     RBNode<T> parent;//父节点
