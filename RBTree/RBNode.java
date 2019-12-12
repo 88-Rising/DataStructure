@@ -14,7 +14,16 @@ package RBTree;
 *
 *
 * */
-public class RBNode {
+public class RBNode<T> {
+    T element;
+    RBNode<T> right;//右孩子
+    RBNode<T> left;//左孩子
+    RBNode<T> parent;//父节点
+    byte color;
 
+    public RBNode(T x){
+        this.element=x;
+
+    }
 
 }
