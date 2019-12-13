@@ -58,6 +58,31 @@ public class BSTree <T extends Comparable<T>>{
             }
 
         }
+        /*
+        * 二叉搜索树的查找方法(递归查找) compareTo方法：
+        *返回值:
+          1)如果指定的数与参数相等返回0。
+          2)如果指定的数小于参数返回 -1。
+          3)如果指定的数大于参数返回 1。
+        *
+        * */
+        private BSTNode<T> search(BSTNode<T> x,T key){
+            if(x==null){
+                return null;
+            }
+            int cmp=key.compareTo(x.key);
+            if(cmp<0){
+                return  search(x.left,key);
+
+            }else if(cmp>0){
+                return search(x.right,key);
+
+            }else
+                return x;
+
+
+
+        }
 
 
 }
