@@ -119,6 +119,29 @@ public class BSTree <T extends Comparable<T>>{
             return tree;
 
         }
+        public T maximum(){
+          BSTNode<T> p=maximum(mRoot);
+          if(p!=null)
+            return p.key;
+          else
+              return null;
+
+        }
+        /*
+        * BSTree二叉搜索树 查找其最小值
+        *
+        * */
+        private BSTNode<T> minimum(BSTNode<T> tree){
+            if(tree == null){
+
+                return null;
+            }
+            while(tree.left!=null){
+                tree=tree.right;
+
+            }
+            return tree;
+        }
 
 }
 
