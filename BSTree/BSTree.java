@@ -152,6 +152,29 @@ public class BSTree <T extends Comparable<T>>{
 
         }
 
+        /*
+        * 结点的前驱 这个结点左子树中最大的结点
+        *
+        * */
+        public BSTNode<T> predecessor (BSTNode<T> x){
+            // 如果x存在左孩子，则"x的前驱结点"为 "以其左孩子为根的子树的最大结点"。
+            if (x.left != null)
+                return maximum(x.left);
+
+            // 如果x没有左孩子。则x有以下两种可能：
+            //  x是"一个右孩子"，则"x的前驱结点"为 "它的父结点"。
+            //  x是"一个左孩子"，则查找"x的最低的父结点，并且该父结点要具有右孩子"，找到的这个"最低的父结点"就是"x的前驱结点"。
+            BSTNode<T> y = x.parent;
+            while ((y!=null) && (x==y.left)) {
+                x = y;
+                y = y.parent;
+            }
+
+            return y;
+
+
+        }
+
 }
 
 
