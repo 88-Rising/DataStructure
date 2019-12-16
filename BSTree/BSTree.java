@@ -64,6 +64,8 @@ public class BSTree <T extends Comparable<T>>{
             }
 
         }
+
+
         /*
         * 二叉搜索树的查找方法(递归查找) compareTo方法：
         *返回值:
@@ -87,6 +89,9 @@ public class BSTree <T extends Comparable<T>>{
                 return x;
 
         }
+
+
+
         /*
         * 二叉搜索树的非递归查找
         * */
@@ -108,6 +113,8 @@ public class BSTree <T extends Comparable<T>>{
             return x;
 
         }
+
+
 
         /*
         * 查询BSTree二叉搜索树的最大值
@@ -133,6 +140,9 @@ public class BSTree <T extends Comparable<T>>{
               return null;
 
         }
+
+
+
         /*
         * BSTree二叉搜索树 查找其最小值
         *
@@ -157,6 +167,8 @@ public class BSTree <T extends Comparable<T>>{
 
 
         }
+
+
 
         /*
         * 结点的前驱 这个结点左子树中最大的结点
