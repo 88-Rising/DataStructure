@@ -28,6 +28,7 @@ public class BSTree <T extends Comparable<T>>{
             }
         }
 
+
         //二叉搜索树先序遍历
         private void preOrder(BSTNode<T> tree){
                 if(tree!=null){
@@ -39,6 +40,8 @@ public class BSTree <T extends Comparable<T>>{
 
 
         }
+
+
         //二叉搜索树中序遍历
         private void inOrder(BSTNode<T> tree){
             if(tree!=null){
@@ -48,6 +51,9 @@ public class BSTree <T extends Comparable<T>>{
             }
 
         }
+
+
+
         //二叉搜索树后序遍历
         private void postOrder(BSTNode<T> tree){
             if(tree!=null){
