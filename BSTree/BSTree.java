@@ -27,6 +27,9 @@ public class BSTree <T extends Comparable<T>>{
                 this.parent = parent;
             }
         }
+        public BSTree(){
+            mRoot=null;
+        }
 
 
         //二叉搜索树先序遍历
@@ -212,6 +215,44 @@ public class BSTree <T extends Comparable<T>>{
         }
 
         return y;
+    }
+
+    /*
+    * 插入结点
+    * */
+    private void insert(BSTree<T> bst , BSTNode<T> z){
+        int cmp;
+        BSTNode<T> y=null;
+        BSTNode<T> x=bst.mRoot;
+
+        while(x!=null){
+            y=x;
+            cmp=z.key.compareTo(y.key);
+            if(cmp<0){
+                x=x.left;
+
+            }else{
+                x=x.right;
+            }
+
+        }
+
+        z.parent=y;
+        if(y==null){
+         bst.mRoot=z;
+        }else{
+            cmp=z.key.compareTo(y.key);
+
+            if(cmp<0){
+                y.left=z;
+            }else{
+                y.right=z;
+
+            }
+        }
+
+
+
     }
 
 }
