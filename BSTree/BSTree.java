@@ -252,6 +252,8 @@ public class BSTree <T extends Comparable<T>>{
             }else{
                 y.right=z;
 
+
+
             }
         }
 
