@@ -245,6 +245,8 @@ public class BSTree <T extends Comparable<T>>{
         if(y==null){
          bst.mRoot=z;
         }else{
+
+
             cmp=z.key.compareTo(y.key);
 
             if(cmp<0){
