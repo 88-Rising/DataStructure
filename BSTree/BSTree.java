@@ -265,6 +265,46 @@ public class BSTree <T extends Comparable<T>>{
 
 
     }
+    //删除一个结点
+    private BSTNode<T> remove(BSTree<T> bst, BSTNode<T> z) {
+        BSTNode<T> x=null;
+        BSTNode<T> y=null;
+
+        if ((z.left == null) || (z.right == null) )
+            y = z;
+        else
+            y = successor(z);
+
+        if (y.left != null)
+            x = y.left;
+        else
+            x = y.right;
+
+        if (x != null)
+            x.parent = y.parent;
+
+        if (y.parent == null)
+            bst.mRoot = x;
+        else if (y == y.parent.left)
+            y.parent.left = x;
+        else
+            y.parent.right = x;
+
+        if (y != z)
+            z.key = y.key;
+
+        return y;
+    }
+
+
+    public void remove(T key) {
+        BSTNode<T> z, node;
+
+        if ((z = search(mRoot, key)) != null)
+            if ( (node = remove(this, z)) != null)
+                node = null;
+    }
+
 
 }
 
