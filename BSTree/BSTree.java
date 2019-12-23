@@ -35,6 +35,7 @@ public class BSTree <T extends Comparable<T>>{
         //二叉搜索树先序遍历
         private void preOrder(BSTNode<T> tree){
                 if(tree!=null){
+
                     System.out.println(tree.key+"  ");
                     preOrder(tree.left);
                     preOrder(tree.right);
