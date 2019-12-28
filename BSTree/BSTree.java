@@ -181,6 +181,7 @@ public class BSTree <T extends Comparable<T>>{
         *
         * */
         public BSTNode<T> predecessor (BSTNode<T> x){
+
             // 如果x存在左孩子，则"x的前驱结点"为 "以其左孩子为根的子树的最大结点"。
             if (x.left != null)
                 return maximum(x.left);
