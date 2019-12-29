@@ -61,6 +61,7 @@ public class BSTree <T extends Comparable<T>>{
 
         //二叉搜索树后序遍历
         private void postOrder(BSTNode<T> tree){
+
             if(tree!=null){
                 postOrder(tree.left);
                 postOrder(tree.right);
