@@ -49,6 +49,7 @@ public class BSTree <T extends Comparable<T>>{
         //二叉搜索树中序遍历
 
         private void inOrder(BSTNode<T> tree){
+
             if(tree!=null){
                 inOrder(tree.left);
                 System.out.println(tree.key+"  ");
