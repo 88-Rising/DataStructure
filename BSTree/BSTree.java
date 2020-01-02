@@ -15,6 +15,7 @@ public class BSTree <T extends Comparable<T>>{
 
         private BSTNode<T> mRoot;//定义根节点
         public class BSTNode<T extends Comparable<T>>{
+
             T key;   //定义键值
             BSTNode<T> right;   //右孩子
             BSTNode<T> left;    //左孩子
