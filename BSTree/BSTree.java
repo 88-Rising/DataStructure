@@ -26,6 +26,7 @@ public class BSTree <T extends Comparable<T>>{
                 this.right = right;
                 this.left = left;
                 this.parent = parent;
+
             }
         }
         public BSTree(){
