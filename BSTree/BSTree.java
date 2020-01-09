@@ -174,6 +174,7 @@ public class BSTree <T extends Comparable<T>>{
         }
 
         public T minimum(){
+
             BSTNode<T> p=minimum(mRoot);
             if(p!=null){
                 return p.key;
