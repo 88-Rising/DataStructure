@@ -202,6 +202,7 @@ public class BSTree <T extends Comparable<T>>{
             //  x是"一个左孩子"，则查找"x的最低的父结点，并且该父结点的有右孩子"，找到的这个"最低的父结点"就是"x的前驱结点"。
             BSTNode<T> y = x.parent;
             while ((y!=null) && (x==y.left)) {
+
                 x = y;
                 y = y.parent;
             }
