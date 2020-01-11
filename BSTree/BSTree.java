@@ -217,6 +217,7 @@ public class BSTree <T extends Comparable<T>>{
        * 结点的后继 ：该节点右子树最小的结点
        * */
     public BSTNode<T> successor(BSTNode<T> x) {
+
         // 如果x存在右孩子，则"x的后继结点"为 "以其右孩子为根的子树的最小结点"。
         if (x.right != null)
             return minimum(x.right);
