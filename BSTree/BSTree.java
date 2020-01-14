@@ -263,6 +263,7 @@ public class BSTree <T extends Comparable<T>>{
 
         z.parent=y;
         if(y==null){
+
          bst.mRoot=z;
         }else{
 
