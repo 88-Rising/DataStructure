@@ -10,12 +10,11 @@ public class BSTree <T extends Comparable<T>>{
     若任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；
     任意节点的左、右子树也分别为二叉查找树；
     没有键值相等的节点。
-    *
+    *0
     * */
 
         private BSTNode<T> mRoot;//定义根节点
         public class BSTNode<T extends Comparable<T>>{
-
             T key;   //定义键值
             BSTNode<T> right;   //右孩子
             BSTNode<T> left;    //左孩子
@@ -125,9 +124,6 @@ public class BSTree <T extends Comparable<T>>{
             return x;
 
         }
-
-
-
         /*
         * 查询BSTree二叉搜索树的最大值
         * */
@@ -154,9 +150,6 @@ public class BSTree <T extends Comparable<T>>{
               return null;
 
         }
-
-
-
         /*
         * BSTree二叉搜索树 查找其最小值
         *
@@ -180,12 +173,7 @@ public class BSTree <T extends Comparable<T>>{
                 return p.key;
             }else
                 return null;
-
-
         }
-
-
-
         /*
         * 结点的前驱 这个结点左子树中最大的结点
         *
@@ -208,8 +196,6 @@ public class BSTree <T extends Comparable<T>>{
             }
 
             return y;
-
-
         }
 
 
@@ -217,34 +203,24 @@ public class BSTree <T extends Comparable<T>>{
        * 结点的后继 ：该节点右子树最小的结点
        * */
     public BSTNode<T> successor(BSTNode<T> x) {
-
         // 如果x存在右孩子，则"x的后继结点"为 "以其右孩子为根的子树的最小结点"。
         if (x.right != null)
             return minimum(x.right);
-
         // 如果x没有右孩子。则x有以下两种可能：
         // (01) x是"一个左孩子"，则"x的后继结点"为 "它的父结点"。
         // (02) x是"一个右孩子"，则查找"x的最低的父结点，并且该父结点要具有左孩子"，找到的这个"最低的父结点"就是"x的后继结点"。
         BSTNode<T> y = x.parent;
         while ((y!=null) && (x==y.right)) {
-
-
             x = y;
             y = y.parent;
         }
-
         return y;
     }
-
-
-
-
     /*
 
     * 插入一个结点
     * */
     private void insert(BSTree<T> bst , BSTNode<T> z){
-
         int cmp;
         BSTNode<T> y=null;
         BSTNode<T> x=bst.mRoot;
@@ -260,14 +236,11 @@ public class BSTree <T extends Comparable<T>>{
             }
 
         }
-
         z.parent=y;
         if(y==null){
 
          bst.mRoot=z;
         }else{
-
-
             cmp=z.key.compareTo(y.key);
 
             if(cmp<0){
@@ -275,52 +248,35 @@ public class BSTree <T extends Comparable<T>>{
             }else{
                 y.right=z;
 
-
-
-
             }
         }
-
-
-
     }
     //删除一个结点
     private BSTNode<T> remove(BSTree<T> bst, BSTNode<T> z) {
         BSTNode<T> x=null;
         BSTNode<T> y=null;
-
         if ((z.left == null) || (z.right == null) )
             y = z;
         else
             y = successor(z);
-
         if (y.left != null)
             x = y.left;
-
-
         else
             x = y.right;
-
         if (x != null)
             x.parent = y.parent;
-
         if (y.parent == null)
             bst.mRoot = x;
         else if (y == y.parent.left)
             y.parent.left = x;
         else
             y.parent.right = x;
-
         if (y != z)
             z.key = y.key;
-
         return y;
     }
-
-
     public void remove(T key) {
         BSTNode<T> z, node;
-
         if ((z = search(mRoot, key)) != null)
             if ( (node = remove(this, z)) != null)
                 node = null;
