@@ -1,5 +1,7 @@
 package BSTree;
 
+import static jdk.nashorn.internal.objects.Global.print;
+
 public class BSTree <T extends Comparable<T>>{
 
 
@@ -282,8 +284,52 @@ public class BSTree <T extends Comparable<T>>{
                 node = null;
     }
 
+  /*
+  * 打印
+  * */
+  public void print(BSTNode<T> tree,T key,int direction){
+      if(tree!=null){
+         if(direction == 0){
+             System.out.printf("%2d is root/n",tree.key );
+
+
+         }else{
+             System.out.printf("%2d is %2d's %6s child/n", tree.key, key, direction==1?"right" : "left");
+
+         }
+          print(tree.left, tree.key, -1);
+          print(tree.right,tree.key,  1);
+      }
+
+  }
+    public void print(){
+      if(mRoot!=null){
+
+          print(mRoot,mRoot.key,0);
+      }
+
+
+    }
+
+    private void destroy(BSTNode<T> tree) {
+        if (tree==null)
+            return ;
+
+        if (tree.left != null)
+            destroy(tree.left);
+        if (tree.right != null)
+            destroy(tree.right);
+
+        tree=null;
+    }
+
+    public void clear() {
+        destroy(mRoot);
+        mRoot = null;
+    }
 
 }
+
 
 
 
