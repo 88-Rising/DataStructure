@@ -318,6 +318,7 @@ public class BSTree <T extends Comparable<T>>{
 
         if (tree.left != null)
             destroy(tree.left);
+
         if (tree.right != null)
             destroy(tree.right);
 
