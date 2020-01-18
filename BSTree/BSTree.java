@@ -313,6 +313,7 @@ public class BSTree <T extends Comparable<T>>{
     }
 
     private void destroy(BSTNode<T> tree) {
+
         if (tree==null)
             return ;
 
