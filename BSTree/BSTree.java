@@ -327,6 +327,7 @@ public class BSTree <T extends Comparable<T>>{
     }
 
     public void clear() {
+
         destroy(mRoot);
         mRoot = null;
     }
