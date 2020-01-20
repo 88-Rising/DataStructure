@@ -304,6 +304,7 @@ public class BSTree <T extends Comparable<T>>{
 
   }
     public void print(){
+
       if(mRoot!=null){
 
           print(mRoot,mRoot.key,0);
