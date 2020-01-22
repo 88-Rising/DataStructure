@@ -254,6 +254,7 @@ public class BSTree <T extends Comparable<T>>{
             }
         }
     }
+
     //删除一个结点
     private BSTNode<T> remove(BSTree<T> bst, BSTNode<T> z) {
         BSTNode<T> x=null;
