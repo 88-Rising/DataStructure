@@ -229,6 +229,7 @@ public class BSTree <T extends Comparable<T>>{
     * 插入一个结点
     * */
     private void insert(BSTree<T> bst , BSTNode<T> z){
+
         int cmp;
         BSTNode<T> y=null;
         BSTNode<T> x=bst.mRoot;
