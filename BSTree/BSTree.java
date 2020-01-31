@@ -299,6 +299,7 @@ public class BSTree <T extends Comparable<T>>{
   * 打印
   * */
   public void print(BSTNode<T> tree,T key,int direction){
+
       if(tree!=null){
          if(direction == 0){
              System.out.printf("%2d is root/n",tree.key );
