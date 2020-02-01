@@ -25,6 +25,7 @@ public class BSTree <T extends Comparable<T>>{
             BSTNode<T> parent;  //父节点
 
             public BSTNode(T key, BSTNode<T> right, BSTNode<T> left, BSTNode<T> parent) {
+
                 this.key = key;
                 this.right = right;
                 this.left = left;
