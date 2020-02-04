@@ -72,6 +72,7 @@ public class BSTree <T extends Comparable<T>>{
         private void postOrder(BSTNode<T> tree){
 
             if(tree!=null){
+
                 postOrder(tree.left);
                 postOrder(tree.right);
                 System.out.println(tree.key+"  ");
