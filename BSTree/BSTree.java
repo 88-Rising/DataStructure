@@ -35,8 +35,6 @@ public class BSTree <T extends Comparable<T>>{
         public BSTree(){
             mRoot=null;
         }
-
-
         //二叉搜索树先序遍历
         private void preOrder(BSTNode<T> tree){
                 if(tree!=null){
