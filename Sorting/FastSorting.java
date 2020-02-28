@@ -16,29 +16,52 @@ import java.util.Arrays;
 public class FastSorting {
     private static int partition(int[] arr, int low, int high) {
         //指定左指针i和右指针j
-
+        int i = low;
+        int j = high;
         //指定第一个数为基准值
-
+        int x=arr[low];
         //使用循环实现分区操作
-
+        while(i<j){//?
+            //从右向左移动j 找到小于基准值的j
+            while(arr[j]>=x && i<j){
+                j--;
+            }
+            //把右侧找到的小于基准值的值加入左边的坑中，然后i++向中间移动一个位置
+            if(i<j){
+                arr[i]=arr[j];
+                i++;
+            }
+            //从左向右移动指针i 找到第一个大于基准值的arr[i]
+            while(arr[i]<x && i<j){
+                i++;
+            }
+            //把左侧找到大于基准值的值计入右边的坑中 然后j--把右指针向中间移动
+            if(i<j){
+                arr[j]=arr[i];
+                j--;
+            }
+        }
         //使用基准值填坑，这就是基准值的最终位置
-
+        arr[i]=x;//arr[j]=y;
         //返回基准值的位置索引
+        return i;
 
-        return 0;
     }
     
     private  static void quickSort(int[] arr,int low,int high){
-        //分区操作 把一个数组分成两个数组 返回分区界索引
-        int index=partition(arr,low,high);
-        
-        //对右分区进行快排
-        quickSort(arr,low,index-1);
-        
-        
-        //对右分区进行快排
-        quickSort(arr,index+1,high);
-        
+
+        if(low<high) {
+            //分区操作 把一个数组分成两个数组 返回分区界索引
+
+            int index = partition(arr, low, high);
+
+            //对右分区进行快排
+            quickSort(arr, low, index - 1);
+
+
+            //对右分区进行快排
+            quickSort(arr, index + 1, high);
+        }
     }
 
 
